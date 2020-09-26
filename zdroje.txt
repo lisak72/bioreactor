@@ -1,0 +1,25 @@
+﻿
+
+Řízení krokového motoru
+driver L293D - do 1.2A peak current - nedostačující pro nás
+driver L298N - max 2A, do 35V - nedostačující
+
+Driver TB6600 výstupní proud 4A - maximálky ale v datasheetu peak 5A, https://www.laskarduino.cz/driver-tb6600-pro-krokove-motory-4a-9-42v-pcb/
+
+
+
+dvojitý H můstek BTS7960B 43A, pěkné, do 27V, určitě bych ho zkusil
+ https://www.laskarduino.cz/h-mustek-bts7960b-43a--motorovy-modul/
+
+Řešení brzdy - lepší by bylo nebrzdit krokovým motorem, je tam velký přídržný proud a stejně to není 100%, muselo by se nějak kontrolovat proskočení např. větrem atd. Polohu bude nutné stejně ověřovat i v iddle modu. Na brzdu mi napadá kovový pásek, který obemkne hřídel a zatáhne a povolí se dalším krokovým motorem. 
+
+Snímání polohy - jak přesně je potřeba? Nejpřesnější bych asi viděl metodou time-of-flight např https://www.laskarduino.cz/laserovy-senzor-vzdalenosti-gy-53-vl53l0x-stm32/
+ale vymyslet jak technicky vůči čemu snímat a jak vyřešit 360stupnu otačení.
+- zároveň to vyžaduje přesnou geografickou orientaci podstavce - řídíme jen vůči podstavci. 
+
+Další možnost je snímání digitálním kompasem, ale z toho bych měl trochu strach. Jednak je VELMI citlivý vůči magnetickému poli - a to jak z případných magnetů, tak vodičů pod proudem atd. Zároveň v severnějších šířkách bude hodně citlivý na případný posun severního magnetického pólu. 
+Ještě mi napadá - dá se dost dobře měřit třeba gravitační zrychlení - kdyby se udělalo něco, co by se za 1 otáčku otočilo o 90 stupňů, mohlo by to stačit. Nějakou další metodou se dá vždy dokalibrovat pokud by se jedna noha propadla a celé se to uhnulo. 
+
+
+
+
