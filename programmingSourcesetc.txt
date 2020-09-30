@@ -27,3 +27,18 @@ example2: {
 	time_t converted;
 	converted = mktime(&when);
 }
+... mktime reference here http://www.cplusplus.com/reference/ctime/mktime/?kw=mktime
+
+
+from time to string (in "brana" project): 
+{
+  time_t seconds;
+  time(&seconds); 
+  akttime=ctime(&seconds);
+  if (akttime[strlen(akttime)-1] == '\n') akttime[strlen(akttime)-1] = '\0'; //remove new line from akttime
+}
+
+compare:
+something here https://stackoverflow.com/questions/13576842/comparing-two-dates-with-different-format-in-c
+https://stackoverflow.com/questions/20185449/compare-2-string-containing-time-and-date
+
