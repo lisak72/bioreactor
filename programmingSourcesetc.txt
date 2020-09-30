@@ -1,0 +1,29 @@
+﻿
+Time conversion
+
+	ctime and strftime
+
+from string to time
+		https://stackoverflow.com/questions/11213326/how-to-convert-a-string-variable-containing-time-to-time-t-type-in-c
+
+example:{
+	const char *time_details = "16:35:12";
+	struct tm tm;
+	strptime(time_details, "%H:%M:%S", &tm);
+	time_t t = mktime(&tm);  // t is now your desired time_t
+}
+
+example2: {
+       	int hh, mm, ss;
+	struct tm when = {0};
+
+	sscanf_s(date, "%d:%d:%d", &hh, &mm, &ss);
+
+
+	when.tm_hour = hh;
+	when.tm_min = mm;
+	when.tm_sec = ss;
+
+	time_t converted;
+	converted = mktime(&when);
+}
