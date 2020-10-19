@@ -42,3 +42,7 @@ compare:
 something here https://stackoverflow.com/questions/13576842/comparing-two-dates-with-different-format-in-c
 https://stackoverflow.com/questions/20185449/compare-2-string-containing-time-and-date
 
+Kaluga with touchscreen
+https://github.com/espressif/esp-dev-kits/tree/master/esp32-s2-kaluga-1
+
+
